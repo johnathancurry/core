@@ -4,5 +4,8 @@
 /composer.lock
 /phpunit.xml
 /vendor/
+/tests/Fixtures/appMongo/cache/*
 /tests/Fixtures/app/cache/*
+/tests/Fixtures/appMongo/logs/*
 /tests/Fixtures/app/logs/*
+

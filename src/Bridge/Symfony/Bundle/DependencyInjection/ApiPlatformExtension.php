@@ -243,6 +243,7 @@ final class ApiPlatformExtension extends Extension implements PrependExtensionIn
                 $paths[] = "$dirname/Resources/config/api_resources$extension";
             }
             $paths[] = "$dirname/Entity";
+            $paths[] = "$dirname/Document";
 
             foreach ($paths as $path) {
                 if ($container->fileExists($path, false)) {
@@ -453,6 +454,11 @@ final class ApiPlatformExtension extends Extension implements PrependExtensionIn
         // Doctrine ORM support
         if ($useDoctrine) {
             $loader->load('doctrine_orm.xml');
+        }
+
+        //  Doctrine MongoDB ODM support
+        if ($config['doctrine']['enable_mongodb_odm']) {
+            $loader->load('doctrine_mongodb.xml');
         }
 
         // FOSUser support
